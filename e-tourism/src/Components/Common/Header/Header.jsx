@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Container,
   Row,
@@ -11,6 +11,16 @@ import {
 import {NavLink} from 'react-router-dom'
 
 const Header = () => {
+  const [open,setOpen]=useState(false);
+
+
+  
+  const  toggleMenu =()=>{
+    setOpen(!open);
+    
+  };
+
+
   return (
     <section className='header-section'>
       <Container>
@@ -25,17 +35,17 @@ const Header = () => {
 
             {/* End Logo Section */}
             
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-lg`}
               aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
               placement="start"
+              show={open}
             >
           {/* mobile Logo section */}
 
               <Offcanvas.Header >
                 <h1 className='logo'>Weekendmonks</h1>
-                <span className='navbar-toggler ms-auto'>
+                <span className='navbar-toggler ms-auto' onClick={toggleMenu}>
                 <i className="bi bi-x-lg"></i>
 
                 </span>
@@ -75,7 +85,7 @@ const Header = () => {
 </NavLink>
 
 <li className='d-inline-block d-lg-none ms-3 toggle_btn'>
-  <i className="bi bi-list"></i>
+  <i className= {open ? "bi bi-x-lg" : "bi bi-list"} onClick={toggleMenu}></i>
 </li>
 
 

@@ -74,7 +74,9 @@ const Header = () => {
   <span className="btn-text">Book Now</span>
 </NavLink>
 
-<li className='d-inline-block d-lg-none ms-3 toggle_btn'></li>
+<li className='d-inline-block d-lg-none ms-3 toggle_btn'>
+  <i className="bi bi-list"></i>
+</li>
 
 
         </Navbar>

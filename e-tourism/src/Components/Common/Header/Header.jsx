@@ -70,9 +70,11 @@ const Header = () => {
             </Navbar.Offcanvas>
 
 <div className="ms-md-4 ms-2"></div>
-<NavLink className="primaryBtn d-none d-sm-line-block">
+<NavLink className="primaryBtn d-none d-sm-inline-block">
   <span className="btn-text">Book Now</span>
 </NavLink>
+
+<li className='d-inline-block d-lg-none ms-3 toggle_btn'></li>
 
 
         </Navbar>

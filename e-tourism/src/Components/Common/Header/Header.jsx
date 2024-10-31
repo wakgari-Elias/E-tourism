@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Container,
   Row,
@@ -9,6 +9,7 @@ import {
   
 } from 'react-bootstrap'
 import {NavLink} from 'react-router-dom'
+import "../Header/Header.css";
 
 const Header = () => {
   const [open,setOpen]=useState(false);
@@ -21,12 +22,35 @@ const Header = () => {
   };
 
 
+useEffect(()=>{
+  window.addEventListener("scroll", isSticky);
+  return () => {
+    window.removeEventListener("scroll", isSticky);
+    };
+})
+
+//sticky header
+const isSticky = (e) => {
+  const header=document.querySelector('header-section');
+  const scrollTop =window.scrollY;
+  scrollTop>=120 ? header.classList.add('is-sticky'):
+  header.classList.remove('is-sticky');
+  
+  
+}
+
+
+
+
+
+
+
   return (
-    <section className='header-section'>
+    <header className='header-section'>
       <Container>
         <Row>
 
-        <Navbar expand='lg'  className="bg-body-tertiary mb-3">
+        <Navbar expand='lg'  className="p-0">
           {/* Logo section */}
           
             <Navbar.Brand >
@@ -94,7 +118,7 @@ const Header = () => {
         </Row>
 
       </Container>
-    </section>
+    </header>
   )
 }
 

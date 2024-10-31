@@ -14,8 +14,8 @@
 
 
   --smallText: 12px;
-  --detailText:14px;
-  --bodyText: 16px;
+  /* --detailText:14px; */
+  --bodyText: 14px;
   --subTitle: 18px;
   --heading: 26px;
   --fontFamily: "Lato", sans-serif;

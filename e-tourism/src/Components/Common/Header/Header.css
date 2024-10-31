@@ -1,0 +1,78 @@
+/* sticky menu  */
+.is-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation: smoothScroll 1s ease-out forwards;
+    background: var(--white);
+    z-index: 9999;
+}
+
+@keyframes smoothScroll {
+    0% {
+        transform: translateY(-40px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.is-sticky .navbar .navbar-brand a ,
+.is-sticky .navbar .offcanvas-body a{
+    color: var(--black);  
+}
+
+.is-sticky .toggle_btn {
+    color: var(--primaryClr) !important;
+}
+
+
+
+header{
+    position:  absolute;
+    top: 0;
+    z-index: 9999;
+    padding: 12px 0px;
+    width: 100%;
+    
+}
+
+header .navbar .navbar-brand a{
+    font-size: 22px;
+    color: var(--white);
+    font-weight: bold;
+    line-height: 150%;
+    font-family: var(--fontFamily1);
+    text-transform: capitalize;
+}
+
+
+header .navbar .offcanvas-body a {
+
+    font-size: var(--bodyText);
+    color: var(--white) !important;
+    font-weight: bold;
+    line-height: 150%;
+    font-family: var(--fontFamily);
+    width: 100%;
+    text-transform: uppercase;
+
+}
+
+header .navbar .offcanvas-body a:hover {
+    color: var(--primaryClr) !important;
+
+}
+
+header .navbar .offcanvas-body .dropdown-menu {
+    min-width: 10rem;
+
+
+
+}
+header .navbar .offcanvas-body .dropdown-menu  .dropdown-item {
+    color: var(--black) !important;
+
+}
